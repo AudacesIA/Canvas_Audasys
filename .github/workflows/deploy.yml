@@ -21,3 +21,6 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/audacesia/canvas:latest
+
+      - name: Redeploy
+        run: curl -X POST ${{ secrets.PORTAINER_WEBHOOK }}
